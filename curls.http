@@ -19,3 +19,5 @@ content-type: application/json
   "director": "Christopher Nolan",
   "releaseYear": 2012
 }
+###
+DELETE http://localhost:3000/movies/2

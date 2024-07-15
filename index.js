@@ -54,6 +54,20 @@ app.put("/movies/:id", (req, res) => {
   }
 });
 
+// DELETE /movies/:id
+app.delete("/movies/:id", (req, res) => {
+  const id = req.params.id;
+  const movie = movies[id];
+  if (movie) {
+    delete movies[id];
+    res.status(204).end();
+    console.log("DELETE /movies/:id", id);
+  } else {
+    res.status(404).json({ message: "Movie not found" });
+    console.log("Movie not found");
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
