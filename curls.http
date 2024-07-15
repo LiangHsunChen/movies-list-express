@@ -1,1 +1,10 @@
 GET http://localhost:3000/movies
+###
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010
+}
