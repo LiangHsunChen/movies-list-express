@@ -10,3 +10,12 @@ content-type: application/json
   "director": "Christopher Nolan",
   "releaseYear": 2010
 }
+###
+PUT http://localhost:3000/movies/1 HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "releaseYear": 2012
+}

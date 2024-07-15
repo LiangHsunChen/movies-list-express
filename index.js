@@ -37,6 +37,23 @@ app.post("/movies", (req, res) => {
   console.log("POST /movies", movie);
 });
 
+// PUT /movies/:id
+app.put("/movies/:id", (req, res) => {
+  const id = req.params.id;
+  const movie = movies[id];
+  if (movie) {
+    const newMovie = req.body;
+    newMovie.id = movie.id;
+    movies[id] = newMovie;
+    res.status(200).json(newMovie);
+
+    console.log("PUT /movies/:id", newMovie);
+  } else {
+    res.status(404).json({ message: "Movie not found" });
+    console.log("Movie not found");
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
